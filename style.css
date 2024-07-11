@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+ background-color: #ededed;
+}
+.body__menu{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(83, 0, 200, 1);
+    padding: 25px;
+}
+
+.body__menu img {
+    Width: 148px;
+    Height: 55px;
+    float: left;
+}
+
+.body__menu h1 {
+    text-align: center;
+    color: aliceblue;
+    align-content: first baseline;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 30px;
+}
+
+    section {
+        margin-bottom: 40px;
+    }
+
+.main-container h1,
+.AgregarProductos h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: rgba(83, 0, 200, 1);
+    position: relative;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.card-container--info {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.card-container--info p {
+    margin: 0;
+    color: #fff;
+}
+
+.card-container--value {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-container--value p {
+    color: #fff;
+    font-weight: bold;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.delete-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.button-submit {
+    background-color: #28a745;
+}
+
+.button-clear {
+    background-color: #dc3545;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(83, 0, 200, 1);
+    padding: 20px;
+    margin: auto;
+}
+
+.footer__rodape img {
+    Width: 148px;
+    Height: 55px;
+    float: left;
+}
+
+.footer__rodape h1 {
+    font-family: Press Start 2P;
+    text-align: center;
+    color: aliceblue;
+    align-content: first baseline;
+    font-size: 2.5em;
+
+}
+
+.footer__rodape p {
+    color: aliceblue;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 600px) {
+    .menu__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu__list__item {
+        margin: 10px 0;
+    }
+
+    .contacto__text {
+        padding: 10px;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    .menu__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contacto__text {
+        padding: 20px;
+    }
+}
+
+/* Estilos para escritorio */
+@media (min-width: 1480px) {
+    .menu__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contacto__text {
+        padding: 40px;
+    }
+}

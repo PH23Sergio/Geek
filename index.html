@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Referencia de la hoja de estilo de Css -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>AluraGeek</title>
+</head>
+
+<body>
+  <div class="body">
+    <section class="body__menu">
+      <header>
+          <img src="/img/imagen1.png" alt="imagen de corazones"/>
+          <h1>AluraGeek</h1>
+        </div>
+      </header>
+    </section>
+  </div>
+
+  <main class="main-container">
+    <section>
+        <h1>Mis productos</h1>
+        <div data-product class="products" data-id="1">
+        </div>
+    </section>
+  
+    <section class="AgregarProductos">
+      <h1>Agregar productos</h1>
+      <form class="form-container" data-form>
+        <input data-name placeholder="nombre..." type="text" required>
+        <input  data-price placeholder="precio..." type="text" required>
+        <input data-image placeholder="imagen..." type="text" required>
+        <div class="button-container" >
+          <button type="submit" class="button-submit" id="button">Enviar...</button>
+          <button type="reset" class="button-clear" id="button">Limpiar.</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <section class="footer">
+      <div class="footer__rodape">
+        <img src="/img/imagen1.png" alt="imagen de corazones" />
+        <h1>AluraGeek</h1>
+        <p>Desarrollado por Sergio </p>
+        <p>&copy; 2024</p>
+      </div>
+    </section>
+    </div>
+  </footer>
+  <script type="module" src="js/controllers/main.js"></script>
+</body>
+
+</html>
