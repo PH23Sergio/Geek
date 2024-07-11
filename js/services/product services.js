@@ -1,13 +1,12 @@
-// services.js
 
 const productList = () => {
-  return fetch("http://localhost:3000/products")
+  return fetch("https://geek-hazel.vercel.app")
       .then((res) => res.json())
       .catch((err) => console.log(err));
 };
 
 const createProducts = (name, price, image) => {
-  return fetch("http://localhost:3000/products", {
+  return fetch("https://geek-hazel.vercel.app", {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
@@ -23,7 +22,7 @@ const createProducts = (name, price, image) => {
 };
 
 const deleteProduct = (id) => {
-  return fetch(`http://localhost:3000/products/${id}`, {
+  return fetch(`https://geek-hazel.vercel.app/${id}`, {
       method: "DELETE",
   })
   .then((res) => {

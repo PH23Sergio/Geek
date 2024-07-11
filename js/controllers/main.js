@@ -16,7 +16,7 @@ function createCard(name, price, image, id) {
             <div class="card-container--value">
                 <p>${price}</p>
                 <button class="delete-button" data-id="${id}">
-                    <img src="/img/Vector.svg" alt="boton eliminar">
+                    <img src="${image}" alt="boton eliminar">
                 </button>
             </div>
         </div>
