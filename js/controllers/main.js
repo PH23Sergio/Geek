@@ -9,27 +9,28 @@ function createCard(name, price, image, id) {
 
     card.innerHTML = `
         <div class="img-container">
-         <img src="${image}" alt="${name}">
+            <img src="${image}" alt="${name}">
         </div>
-
-          <div class="card-container--info">
+        <div class="card-container--info">
             <p>${name}</p>
             <div class="card-container--value">
-              <p>${price}</p>
+                <p>${price}</p>
                 <button class="delete-button" data-id="${id}">
                     <img src="/img/Vector.svg" alt="boton eliminar">
                 </button>
             </div>
-          </div>
+        </div>
     `;
-    productContainer.appendChild(card);
+
+    const deleteButton = card.querySelector(".delete-button");
+    deleteButton.addEventListener("click", handleDelete);
+
     return card;
 }
 
 const render = async () => {
     try {
         const listProducts = await servicesProducts.productList();
-
         listProducts.forEach((product) => {
             productContainer.appendChild(
                 createCard(product.name, product.price, product.image, product.id)
@@ -40,28 +41,30 @@ const render = async () => {
     }
 };
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
+const handleDelete = async (event) => {
+    const button = event.target.closest(".delete-button");
+    const productId = button.getAttribute("data-id");
+    try {
+        await servicesProducts.deleteProduct(productId);
+        button.closest(".card").remove();
+    } catch (error) {
+        console.log("Error al eliminar el producto", error);
+        alert("Error al eliminar el producto");
+    }
+};
 
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
     const name = document.querySelector("[data-name]").value;
     const price = document.querySelector("[data-price]").value;
     const image = document.querySelector("[data-image]").value;
 
-    servicesProducts
-        .createProducts(name, price, image)
-       
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
-  
+    try {
+        const newProduct = await servicesProducts.createProducts(name, price, image);
+        productContainer.appendChild(createCard(newProduct.name, newProduct.price, newProduct.image, newProduct.id));
+    } catch (error) {
+        console.log("Error al crear el producto", error);
+    }
 });
 
-productContainer.addEventListener("click", async (event) => {
-    event.preventDefault();
-
-    const id =document.querySelector("[data-delete]");
-        servicesProducts
-        .deleteProduct(id)
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
-    })
 render();

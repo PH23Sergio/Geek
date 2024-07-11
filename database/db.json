@@ -11,12 +11,6 @@
       "price": "60",
       "image": "http://127.0.0.1:5500/img/starwars2.png",
       "id": "2"
-    },
-    {
-      "id": "cb6e",
-      "name": "ff",
-      "price": "ff",
-      "image": "http://127.0.0.1:5500/img/starwars2.png"
     }
   ]
 }
